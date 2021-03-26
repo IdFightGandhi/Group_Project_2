@@ -2,9 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Pet extends Model{};
+class Friend extends Model{};
 
-Pet.init(
+
+Friend.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,41 +13,27 @@ Pet.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        type: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        age: {
+        main_user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-        },
-        personality: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        neutered: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        owner_id: {
-            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
             }
         },
+        reference_user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'pet',
+        modelName: 'friend',
     }
-)
+);
 
-module.exports = Pet;
+
+module.exports = Friend;

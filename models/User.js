@@ -46,6 +46,10 @@ User.init(
     bio: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    pict: {
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   },
   {
