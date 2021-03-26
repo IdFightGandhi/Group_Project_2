@@ -3,7 +3,6 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-     // res.json({message: 'you are in home routes'});
 
     try {
         res.render('homepage');
@@ -14,7 +13,6 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/signup', async (req, res) => {
-    // res.json({message: 'you are in signup'});
 
     try {
         res.render('signup');
@@ -25,7 +23,7 @@ router.get('/signup', async (req, res) => {
 });
 
 router.get('/profile', async (req, res) => {
-    // res.json({message: 'you are in profile'});
+    
     try {
         res.render('profile');
       } catch (err) {
@@ -35,7 +33,7 @@ router.get('/profile', async (req, res) => {
 });
 
 router.get('/search', async (req, res) => {
-    // res.json({message: 'you are in search'});
+    
     try {
         res.render('search');
       } catch (err) {
@@ -45,7 +43,7 @@ router.get('/search', async (req, res) => {
 });
 
 router.get('/userProfile', async (req, res) => {
-     // res.json({message: 'you are in user profile'});
+     
      try {
         res.render('userProfile');
       } catch (err) {
