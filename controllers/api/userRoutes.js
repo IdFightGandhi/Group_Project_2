@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
-const {User} = require('../../models');
+const {User, Pet, FR, Friend} = require('../../models');
 
 router.get('/', async (req, res) => {
     res.json({message: 'you are in user routes'});
@@ -8,7 +8,9 @@ router.get('/', async (req, res) => {
 
 router.get('/findall', async(req, res) => {
     try{
-        const userData = await User.findAll();
+        const userData = await User.findAll({
+            include: [{model: Pet}, {model: FR}, {model: Friend}],
+        });
         res.status(200).json(userData);
     } catch (err) {
         res.status(500).json(err);
