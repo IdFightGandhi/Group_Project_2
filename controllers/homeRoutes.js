@@ -17,7 +17,7 @@ router.get('/signup', async (req, res) => {
     // res.json({message: 'you are in signup'});
 
     try {
-        res.render('/signup');
+        res.render('signup');
       } catch (err) {
         res.status(500).json(err);
       }
@@ -27,7 +27,7 @@ router.get('/signup', async (req, res) => {
 router.get('/profile', async (req, res) => {
     // res.json({message: 'you are in profile'});
     try {
-        res.render('/profile');
+        res.render('profile');
       } catch (err) {
         res.status(500).json(err);
       }
@@ -37,7 +37,7 @@ router.get('/profile', async (req, res) => {
 router.get('/search', async (req, res) => {
     // res.json({message: 'you are in search'});
     try {
-        res.render('/search');
+        res.render('search');
       } catch (err) {
         res.status(500).json(err);
       }
@@ -47,7 +47,7 @@ router.get('/search', async (req, res) => {
 router.get('/userProfile', async (req, res) => {
      // res.json({message: 'you are in user profile'});
      try {
-        res.render('/userProfile');
+        res.render('userProfile');
       } catch (err) {
         res.status(500).json(err);
       }
