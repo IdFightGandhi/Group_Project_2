@@ -19,7 +19,9 @@ router.get('/findall', async(req, res) => {
 
 router.get('/findbyid', async(req, res) => {
     try{
-        const userData = await User.findByPk(req.body.id);
+        const userData = await User.findByPk(req.body.id,{
+            include: [{model: Pet}, {model: FR}, {model: Friend}],
+        });
         if(userData == null){
             res.status(400).json('This user does not exist.');
         } else {
