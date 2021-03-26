@@ -51,5 +51,55 @@ html, body {
 .about-img {
     max-height: 450px;
     height: auto;
-    
+
+}
+
+.padding img {
+    width: 100%;
+}
+
+#fixed {
+    background: url(./public/css/images/dogs-and-playdate.jpg) no-repeat center center fixed;
+    display: table;
+    height: 60%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+}
+
+footer {
+    width: 100%;
+    background-color: #23415c;
+    padding: 5% 5% 10% 5%;
+    color: white;
+
+}
+
+.fa {
+    padding: 15px;
+    font-size: 25px;
+    color: white;
+}
+
+.fa:hover {
+    color: pink;
+    text-decoration: none;
+}
+
+.icon  {
+    max-width: 200px;
+}
+
+@media (max-width: 768px) {
+    .landing-text h1 {
+        font-size: 300%;
+    }
+    .fa {
+        font-size: 20px;
+        padding: 10px;   
+    }
+    .icon {
+        padding-top: 5%;
+        max-width: 100px;
+    }
 }
