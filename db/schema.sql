@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS woofer_db;
+CREATE DATABASE woofer_db;
