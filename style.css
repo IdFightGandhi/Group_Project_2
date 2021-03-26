@@ -1,0 +1,34 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.navbar {
+    background-color: #23415C;
+    padding:1% 0;
+    font-size: 1.2em;
+}
+
+.resize {
+    max-height: 80px;
+    height: auto;
+    padding: 0 5px 40px;
+}
+
+.navbar-default .navbar-nav li a {
+    color: #d5d5d5;
+}
+
+.navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:active{
+    color: pink
+}
+
+#home {
+    background: url(./public/css/images/dog-and-kitten-meeting.jpg) no-repeat center fixed;
+    display: table;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+
+}
