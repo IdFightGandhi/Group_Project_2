@@ -52,6 +52,15 @@ router.put('/update', async(req, res) => {
     }
 });
 
+router.put('/editinfo', async(req, res) => {
+    try{
+        const updatedData = await User.update(req.body, {where: {id: req.session.user_id}});
+        res.status(200).json(updatedData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.delete('/delete', async(req, res) => {
     try{
         const deletedData = await User.destroy({where: {id: req.body.id}});

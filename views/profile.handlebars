@@ -3,11 +3,12 @@
                 <div class="col-md-4 mt-1">
                     <div class="card text-center sidebar">
                         <div class="card-body">
-                            <img src="/img/doge.jpeg" class="rounded-circle" width="150" alt="Profile Pic">
+                            <img src="{{pict}}" class="rounded-circle" width="150" alt="Profile Pic">
                             <div class="mt-3">
                                 <h3>{{name}}</h3>
-                                <a href="">Edit Profile</a>
-                                <a href="" id="logOutLink">Log Out</a>
+                                <button type="button" class="btn btn-danger" id="logOutLink">Log Out</button>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Edit Info</button>
+                                <button type="button" class="btn btn-info uploadButton" id="">Upload Picture</button>
 
                             </div>
                         </div>
@@ -80,4 +81,31 @@
             </div>
         </div>
 
-        <script src="/js/profilePage.js"></script>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Name" name="email" id="updatedUserName" class="form-control">
+        <label for="name"><b>ZipCode</b></label>
+        <input type="text" placeholder='zip' name="email" id="updatedZip" class="form-control">
+        <label for="name"><b>Age</b></label>
+        <input type="text" placeholder="age here" name="email" id="updatedEmail" class="form-control">
+        <label for="name"><b>Bio</b></label>
+        <input type="text" placeholder="Enter Full Name" name="email" id="updatedBio" class="form-control" style="height: 70px;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="editProfButton">Edit Profile</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script src="/js/profilePage.js"></script>

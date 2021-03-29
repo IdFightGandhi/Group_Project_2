@@ -4,10 +4,12 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
       try {
+        console.log('/ route hit');
         if (req.session.logged_in){
           console.log('user already logged in, redirecting');
           res.redirect('/profile');
         } else {
+          console.log('rendering home page');
           res.render('homepage');
         }
       } catch (err) {
