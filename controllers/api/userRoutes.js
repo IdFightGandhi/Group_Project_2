@@ -60,6 +60,49 @@ router.delete('/delete', async(req, res) => {
     }
 });
 
+router.post('/loginuser', async(req, res) => {
+    try{
+        console.log('/api/user/loginuser hit');
+        const userData = await User.findOne({where: {email: req.body.emailInput}});
+        if(userData == null){
+            res.status(400).json({message: 'no user with this email exists'});
+        }
+
+        if(userData.checkPassword(req.body.passwordInput)){
+            console.log('user logged in');
+            
+            req.session.save(() =>{
+                req.session.user_id = userData.id;
+                req.session.logged_in = true;
+
+                res.json({ user: userData, message: 'You are now logged in!' });
+            });
+            // res.redirect('/profile'); 
+        } else {
+            console.log('failed user login');
+            res.status(300).json({message: 'invalid password'});
+        }
+        
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+router.post('/logout', (req, res) => {
+    console.log('/api/user/logout hit');
+    if (req.session.logged_in) {
+      // Remove the session variables
+      req.session.destroy(() => {
+        // res.status(204).end();
+        // res.redirect('/');
+        res.json({message: 'successfully logged out'});
+      });
+    //   res.redirect('/');
+    } else {
+      res.status(404).end();
+    }
+  });
 
 
 
