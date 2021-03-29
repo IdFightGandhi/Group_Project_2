@@ -1,6 +1,6 @@
 var userNameE = document.querySelector('#updatedUserName');
-var userAgeE = document.querySelector('#updatedZip');
-var userZipE = document.querySelector('#updatedEmail');
+var userAgeE = document.querySelector('#updatedAge');
+var userZipE = document.querySelector('#updatedZip');
 var userBioE = document.querySelector('#updatedBio');
 var uploadPic = document.querySelector('.uploadButton');
 
