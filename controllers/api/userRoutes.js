@@ -35,6 +35,7 @@ router.get('/findbyid', async(req, res) => {
 
 router.post('/create', async(req, res) => {
     try{
+        console.log('/api/user/create route hit');
         const newUserData = await User.create(req.body);
         res.status(200).json(newUserData);
     } catch (err) {
