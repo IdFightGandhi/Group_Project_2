@@ -11,4 +11,12 @@ router.use('/user', userRoutes);
 router.use('/friend', friendRoutes);
 router.use('/fr', friendRequestRoutes);
 
+router.post('/checkinput', async (req, res) => {
+    try {
+        res.status(200).json({message: 'success'});
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;

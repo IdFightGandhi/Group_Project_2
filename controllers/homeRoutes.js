@@ -1,11 +1,15 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const {User, Pet, FR, Friend} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-
-    try {
-        res.render('homepage');
+      try {
+        if (req.session.logged_in){
+          console.log('user already logged in, redirecting');
+          res.redirect('/profile');
+        } else {
+          res.render('homepage');
+        }
       } catch (err) {
         res.status(500).json(err);
       }
@@ -22,10 +26,15 @@ router.get('/signup', async (req, res) => {
 
 });
 
-router.get('/profile', async (req, res) => {
-    
+router.get('/profile', withAuth, async (req, res) => {
     try {
-        res.render('profile');
+        console.log('/profile route hit');
+        const userData = await User.findByPk(req.session.user_id,{
+          include: [{model: Pet}, {model: FR}, {model: Friend}],
+        });
+
+        const data = userData.get({ plain: true });
+        res.render('profile', data);
       } catch (err) {
         res.status(500).json(err);
       }
@@ -50,6 +59,11 @@ router.get('/userProfile', async (req, res) => {
         res.status(500).json(err);
       }
 
+});
+
+router.get('/test', async (req, res) => {
+  console.log('test');
+  res.redirect('profile');
 });
 
 
