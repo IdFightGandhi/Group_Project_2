@@ -37,7 +37,9 @@ router.get('/findbyid', async(req, res) => {
 
 router.post('/create', async(req, res) => {
     try{
-        const newPetData = await Pet.create(req.body);
+        let newPetDataToPush = req.body;
+        newPetDataToPush.owner_id = req.session.user_id;
+        const newPetData = await Pet.create(newPetDataToPush);
         res.status(200).json(newPetData);
     } catch (err) {
         res.status(500).json(err);

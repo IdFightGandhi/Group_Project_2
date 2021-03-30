@@ -28,6 +28,10 @@ Pet.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        pict: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         neutered: {
             type: DataTypes.STRING,
             allowNull: false,

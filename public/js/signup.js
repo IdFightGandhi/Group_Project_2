@@ -45,7 +45,7 @@ document.querySelector('.registerbtn').addEventListener('click', (event) => {
         zip: zipInputr.value,
         age: 0,
         bio: 'I love animals and the people that love animals! :)',
-        pict: 'no picture set',
+        pict: 'https://res.cloudinary.com/dj63qafw1/image/upload/v1617042538/d6ni40zwbirczht0vdge.jpg',
     };
 
     fetch('/api/user/create', {

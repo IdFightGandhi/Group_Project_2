@@ -1,7 +1,11 @@
 <div class="d-flex justify-content-center align-items-center" style="margin-bottom: 20px;">
                                 <div style="display: flex; justify-content: left; align-items: center;">
                                     <div>
-                                        <img src="/img/doge.jpeg" style="width: 250px;">
+                                        <div style="margin-bottom: 5px;">
+                                            <a href="#" class="badge badge-danger removePet" style="background-color: red;" myPetId={{id}}>Remove</a>
+                                            <a href="#" class="badge badge-primary uploadPetPict" style="background-color: rgb(0, 107, 230);" myPetId={{id}}>Upload Image</a>
+                                        </div>
+                                        <img src="{{pict}}" style="width: 250px;">
                                     </div>
                                     <div style="margin-left: 20px;">
                                         <h3>{{name}}</h3>
