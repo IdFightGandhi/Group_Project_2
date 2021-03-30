@@ -2,6 +2,7 @@ const User = require('./User');
 const Pet = require('./Pet');
 const FR = require('./FR');
 const Friend = require('./Friend');
+const Messages = require('./Messages');
 
 
 // sets up relationship between pet and user tables
@@ -37,4 +38,4 @@ Friend.belongsTo(User, {
 });
 
 
-module.exports = {User, Pet, FR, Friend};
+module.exports = {User, Pet, FR, Friend, Messages};
