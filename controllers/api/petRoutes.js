@@ -20,6 +20,7 @@ router.get('/findall', async(req, res) => {
 });
 
 
+
 router.get('/findbyid', async(req, res) => {
     try{
         const petData = await Pet.findByPk(req.body.id);
