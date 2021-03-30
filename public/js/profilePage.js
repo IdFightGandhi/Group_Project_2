@@ -24,11 +24,8 @@ uploadPic.addEventListener('click', (event) => {
                     body: JSON.stringify(userPicObj),
                     headers: { 'Content-Type': 'application/json' },
                 });
-
                 location.reload();
             }
-
-
         });
 });
 

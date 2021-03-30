@@ -53,15 +53,19 @@ router.get('/search', async (req, res) => {
 
 });
 
-router.get('/userProfile', async (req, res) => {
-     
+router.get('/userProfile/:userId', withAuth, async (req, res) => {    
      try {
-        res.render('userProfile');
+      const userData = await User.findByPk(req.params.userId,{
+        include: [{model: Pet}],
+        });
+        const data = userData.get({ plain: true });
+        res.render('userProfile', data);
       } catch (err) {
         res.status(500).json(err);
       }
 
 });
+
 
 router.get('/test', async (req, res) => {
   console.log('test');

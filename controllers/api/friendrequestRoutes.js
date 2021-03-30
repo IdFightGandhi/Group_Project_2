@@ -56,6 +56,7 @@ router.put('/update', async(req, res) => {
 
 router.delete('/delete', async(req, res) => {
     try{
+        console.log('/api/fr/delete hit');
         const deletedData = await FR.destroy({where: {id: req.body.id}});
         res.status(200).json(deletedData);
     } catch (err) {
@@ -64,7 +65,7 @@ router.delete('/delete', async(req, res) => {
 });
 
 
-router.get('/acceptfr', async(req, res) => {
+router.post('/acceptfr', async(req, res) => {
     try{
         let user1 = req.body.sender_id;
         let user2 = req.body.receiver_id;
@@ -87,6 +88,7 @@ router.get('/acceptfr', async(req, res) => {
     }
     
 });
+
 
 
 module.exports = router;
