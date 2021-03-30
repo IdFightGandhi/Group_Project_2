@@ -43,7 +43,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
 });
 
-router.get('/search', async (req, res) => {
+router.get('/search', withAuth, async (req, res) => {
     
     try {
       const userProfile = await User.findAll({include: [{model: Pet}]});
@@ -54,6 +54,11 @@ router.get('/search', async (req, res) => {
       //   });
       // });
       console.log(users);
+      for(var i = 0; i < users.length; i++){
+        if(users[i].id = req.session.user_id){
+          users.splice(i, 1);
+        }
+      }
       res.render('search', { users });
       // res.json(users);
       } catch (err) {
