@@ -87,6 +87,11 @@ footer {
     text-decoration: none;
 }
 
+button .btn:hover {
+    background-color: pink;
+    color: pink;
+}
+
 .icon  {
     max-width: 200px;
 }
