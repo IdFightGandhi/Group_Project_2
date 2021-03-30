@@ -20,7 +20,7 @@ searchForm.addEventListener("click", function(e){
         
     }
 console.log(findUser)
-    const response = fetch('/api/user/findall', {findUser})
+    const response = fetch('/api/user/finduserprofile', {findUser})
 
     .then(data=>{
         console.log(data)
