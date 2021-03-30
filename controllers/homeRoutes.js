@@ -43,7 +43,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
 });
 
-router.get('/search', async (req, res) => {
+router.get('/search', withAuth, async (req, res) => {
     
     try {
       const userProfile = await User.findAll({include: [{model: Pet}]});
