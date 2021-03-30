@@ -55,15 +55,59 @@ router.get('/search', async (req, res) => {
 
 router.get('/userProfile/:userId', withAuth, async (req, res) => {    
      try {
-      const userData = await User.findByPk(req.params.userId,{
-        include: [{model: Pet}],
+        const userData = await User.findByPk(req.params.userId,{
+        include: [{model: Pet}, {model: FR}],
         });
+        const myUserData = await User.findByPk(req.session.user_id,{
+          include: [{model: Pet}, {model: FR}, {model: Friend}],
+        });
+        const myData = myUserData.get({plain: true});
         const data = userData.get({ plain: true });
+        
+        data.requestSent = false;
+        myData.frs.forEach(element => {
+          if(element.sender_id == data.id){
+            data.requestSent = true;
+            data.fr = element;
+          }
+        });
+
+        data.requestReceived = false;
+        data.frs.forEach(element => {
+          if(element.sender_id == myData.id){
+            data.requestReceived = true;
+          }
+        });
+
+
+        data.is_friend = false;
+        myData.friends.forEach(element => {
+          if(element.reference_user_id == data.id){
+            data.is_friend = true;
+          }
+        });
+
+        data.myId = req.session.user_id;
+
+        console.log(data);
         res.render('userProfile', data);
       } catch (err) {
         res.status(500).json(err);
       }
 
+});
+
+router.get('/chat', withAuth, async(req, res) => {
+    try{
+      const userData = await User.findByPk(req.session.user_id,{
+        include: [{model: Pet}, {model: FR}, {model: Friend}],
+      });
+
+      const data = userData.get({ plain: true });
+      res.render('chat', data);
+    } catch(err){
+      res.status(500).json(err);
+    }
 });
 
 
