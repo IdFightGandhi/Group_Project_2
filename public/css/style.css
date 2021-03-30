@@ -24,7 +24,7 @@ html, body {
 }
 
 #home {
-    background: url(/public/img/dog-and-kitten-meeting.jpg) no-repeat center fixed;
+    background: url(../img/dog-and-kitten-meeting.jpg) no-repeat center fixed;
     display: table;
     height: 100%;
     position: relative;
@@ -60,7 +60,7 @@ html, body {
 }
 
 #fixed {
-    background: url(/public/img/animal-friends.jpg) no-repeat center center fixed;
+    background: url(../img/animal-friends.jpg) no-repeat center center fixed;
     display: table;
     height: 60%;
     position: relative;
