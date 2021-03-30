@@ -17,7 +17,7 @@ router.get('/findall', async(req, res) => {
     }
 });
 
-router.get('/findbyid', async(req, res) => {
+router.put('/findbyid', async(req, res) => {
     try{
         const userData = await User.findByPk(req.body.id,{
             include: [{model: Pet}, {model: FR}, {model: Friend}],
