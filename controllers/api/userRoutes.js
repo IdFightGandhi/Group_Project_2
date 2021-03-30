@@ -17,6 +17,17 @@ router.get('/findall', async(req, res) => {
     }
 });
 
+router.get('/finduserprofile', async(req, res) => {
+    try{
+        const userProfile = await User.findAll();
+        res.status(200).json(userProfile);
+        console.log(userProfile)
+    }catch(err) {
+        res.status(500).json(err);
+    }
+    
+});
+
 router.put('/findbyid', async(req, res) => {
     try{
         const userData = await User.findByPk(req.body.id,{

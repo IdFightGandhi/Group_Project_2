@@ -46,7 +46,16 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/search', async (req, res) => {
     
     try {
-        res.render('search');
+      const userProfile = await User.findAll({include: [{model: Pet}]});
+      const users = userProfile.map((user) => user.get({ plain: true }));
+      // users.forEach( user => {
+      //   user.pets.forEach(pet => {
+      //     pet=pet.get({plain: true})
+      //   });
+      // });
+      console.log(users);
+      res.render('search', { users });
+      // res.json(users);
       } catch (err) {
         res.status(500).json(err);
       }
@@ -55,6 +64,7 @@ router.get('/search', async (req, res) => {
 
 router.get('/userProfile/:userId', withAuth, async (req, res) => {    
      try {
+
         const userData = await User.findByPk(req.params.userId,{
         include: [{model: Pet}, {model: FR}],
         });
@@ -90,12 +100,14 @@ router.get('/userProfile/:userId', withAuth, async (req, res) => {
         data.myId = req.session.user_id;
 
         console.log(data);
+
         res.render('userProfile', data);
       } catch (err) {
         res.status(500).json(err);
       }
 
 });
+
 
 router.get('/chat', withAuth, async(req, res) => {
     try{
