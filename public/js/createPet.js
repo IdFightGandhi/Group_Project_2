@@ -31,7 +31,7 @@ newPetCreatButton.addEventListener('click', async (event) => {
         type: petTypeInput.value ,
         personality: personality.value,
         neutered: 'NA',
-        pict: 'https://res.cloudinary.com/dj63qafw1/image/upload/v1617042736/zgdqb9zwkcsrm2gxts5u.jpg',
+        pict: 'https://res.cloudinary.com/dj63qafw1/image/upload/v1617137602/logo_ifkbzn.png',
     }
 
     await fetch('/api/pet/create', {
