@@ -4,12 +4,14 @@ const petRoutes = require('./petRoutes');
 const userRoutes = require('./userRoutes');
 const friendRoutes = require('./friendRoutes');
 const friendRequestRoutes = require('./friendrequestRoutes');
+const messagesRoutes = require('./messagesRoutes');
 
 
 router.use('/pet', petRoutes);
 router.use('/user', userRoutes);
 router.use('/friend', friendRoutes);
 router.use('/fr', friendRequestRoutes);
+router.use('/message', messagesRoutes);
 
 router.post('/checkinput', async (req, res) => {
     try {

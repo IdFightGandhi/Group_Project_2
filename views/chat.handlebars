@@ -1,0 +1,26 @@
+<div class="container mainCont" style="margin-bottom: 50px;" my_id="{{id}}">
+
+    
+    <div style="display: flex; justify-content: center;">
+        
+        <div class="col-3" style="margin-top: 62px;">
+            <ul class="list-group">
+                {{#each friends as |friend|}}
+                {{> friendItemChat}}
+                {{/each}}
+            </ul>
+        </div>
+        <div style="width: 500px;">
+            <h2>Chatting with <span class="chatName"></span></h2>
+            <div style="background-color: rgb(228, 228, 228); height: 500px; overflow: scroll;" class="messsageHolder">
+                
+            </div>
+            <div style="display: flex;">
+                <input class="form-control col-10" id="messageInput">
+                <button type="button" class="btn btn-info sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/friendsListChat.js"></script>

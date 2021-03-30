@@ -6,6 +6,20 @@
                             <img src="{{pict}}" class="rounded-circle" width="150" alt="Profile Pic">
                             <div class="mt-3">
                                 <h3>{{name}}</h3>
+
+                                {{#if requestSent }}
+                                <button type="button" class="btn btn-success acceptFR" fr_id="{{fr.id}}" s_id="{{fr.sender_id}}" r_id="{{fr.receiver_id}}">Accept Friend Request</button>
+                                <script src="/js/acceptFRAltProf.js"></script>
+                                {{/if}}
+                                {{#unless is_friend}}
+                                {{#unless requestSent}}
+                                {{#unless requestReceived}}
+                                <button type="button" class="btn btn-primary sendFR" r_id="{{id}}" s_id="{{myId}}">Send Friend Request</button>
+                                <script src="/js/sendFRAltProf.js"></script>
+                                {{/unless}}
+                                {{/unless}}
+                                {{/unless}}
+
                             </div>
                         </div>
                     </div>

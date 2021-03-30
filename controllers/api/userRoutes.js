@@ -28,7 +28,6 @@ router.get('/finduserprofile', async(req, res) => {
     
 });
 
-
 router.put('/findbyid', async(req, res) => {
     try{
         const userData = await User.findByPk(req.body.id,{
