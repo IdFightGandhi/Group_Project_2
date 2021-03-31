@@ -1,6 +1,6 @@
 var emailInput = document.querySelector('#emailInput');
 var passwordInput = document.querySelector('#passwordInput');
-var subButton = document.querySelector('#loginSubmitButton');
+var subButton = document.querySelector('.loginSubmitButton');
 
 subButton.addEventListener('click', async (event)=>{
     event.preventDefault();

@@ -19,13 +19,15 @@ searchForm.addEventListener("click", function(e){
         name: userInput
         
     }
-console.log(findUser)
-    const response = fetch('/api/user/findall', {findUser})
+// console.log(findUser)
+//     const response = fetch('/api/user/findall/' + findUser.name )
 
-    .then(data=>{
-        console.log(data)
-    })
-console.log(response);
+//     .then(data=>{
+//         console.log(data)
+        
+//     })
+// console.log(response);
 
+window.location.href='/api/user/findall/' + findUser.name;
 
 });
