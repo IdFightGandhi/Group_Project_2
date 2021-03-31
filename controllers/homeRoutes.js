@@ -53,9 +53,10 @@ router.get('/search', withAuth, async (req, res) => {
       //     pet=pet.get({plain: true})
       //   });
       // });
-      console.log(users);
+      // console.log(users);
+      // let usersToSend = [];
       for(var i = 0; i < users.length; i++){
-        if(users[i].id = req.session.user_id){
+        if(users[i].id == req.session.user_id){
           users.splice(i, 1);
         }
       }
