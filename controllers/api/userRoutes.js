@@ -6,12 +6,19 @@ router.get('/', async (req, res) => {
     res.json({message: 'you are in user routes'});
 });
 
-router.get('/findall', async(req, res) => {
+router.get('/findall/:user', async(req, res) => {
     try{
         const userData = await User.findAll({
+            where: {
+                name: req.params.user
+              },
             include: [{model: Pet}, {model: FR}, {model: Friend}],
         });
-        res.status(200).json(userData);
+        // res.status(200).json(userData);
+        const users = userData.map((user) => user.get({ plain: true }));
+
+        res.render('search', { users });
+        
     } catch (err) {
         res.status(500).json(err);
     }
