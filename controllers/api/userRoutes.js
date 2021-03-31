@@ -85,6 +85,7 @@ router.post('/loginuser', async(req, res) => {
     try{
         console.log('/api/user/loginuser hit');
         const userData = await User.findOne({where: {email: req.body.emailInput}});
+        console.log(userData)
         if(userData == null){
             res.status(400).json({message: 'no user with this email exists'});
         }

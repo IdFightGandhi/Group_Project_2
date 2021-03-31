@@ -1,8 +1,8 @@
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+{{!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> --}}
     <!-- #################################### Start NavBar Section ############################## -->
 
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    {{!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
@@ -22,7 +22,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> --}}
 
     <!-- #################################### End NavBar Section ############################## -->
 
@@ -53,7 +53,7 @@
                                     <div class="col-md-10 mt-5 pt-5">
                                         <div class="row z-depth-3">
                                             <div class="col-sm-4 bg-info rounded-left">
-                                                <div class="card-block text-center text-white">
+                                                <div class="card-block text-center text-white" style="padding-bottom: 15px;">
                                                     <i class="fa fa-user-tie fa-7x mt-5"></i>
                                                     <img src="{{user.pict}}" alt="userPic">
                                                     <h2 class="font-weight-bold mt-4">{{user.name}}</h2>
@@ -61,28 +61,20 @@
                                                     {{!-- <p>{{user.zip}}</p> --}}
                                                 </div>
                                             </div>
-                                            <div class="col-sm-8 bg-white rounded-right">
+                                            <div class="col-sm-8 bg-white rounded-right" style="margin-left: 15px; display: flex;">
                                                 
                                         
                                                 {{!-- <h4 class="mt-3">Pets</h4> --}}
                                                 
                                                 {{#each pets as |pet|}}
-                                                <hr class="bg-primary">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
+                                                <div style="margin-left: 10px;">
+                                                    <div >
                                                         {{!-- <p class="font-weight-bold">{{#each }}</p> --}}
-                                                        <h6 class="text-muted">{{pet.name}}</h6>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <p class="font-weight-bold">Pet Pics</p>
+                                                        <h4 >{{pet.name}}</h4>
                                                         <img src="{{pet.pict}}" width="200px">
                                                     </div>
                                                 </div>
                                                 {{/each}}
-                                                
-                                                
-                                                
-
                                                 </div>
                                             </div>
                                         </div>
@@ -96,7 +88,7 @@
             </div>
         </div>
     <!-- #################################### Start Footer Section ############################## -->
-    <footer class="container-fluid text-center">
+    {{!-- <footer class="container-fluid text-center">
         <div class="row">
             <div class="col-sm-4">
                 <h3>Contact Us</h3>
@@ -118,7 +110,7 @@
 
             </div>
         </div>
-    </footer>
+    </footer> --}}
 
     <!-- #################################### End Footer Section ############################## -->
 
