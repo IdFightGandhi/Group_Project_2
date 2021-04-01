@@ -1,4 +1,8 @@
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+
+
+    <!-- #################################### End NavBar Section ############################## -->
+
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
 
@@ -37,12 +41,13 @@
                                                     
                                                 </div>
                                             </div>
-                                            <div class="col-sm-8 bg-white rounded-right">
+                                            <div class="col-sm-8 bg-white rounded-right" style="margin-left: 15px; display: flex;">
                                                 
                                         
                                                 {{!-- <h4 class="mt-3">Pets</h4> --}}
                                                 
                                                 {{#each pets as |pet|}}
+
                                                 <hr class="bg-primary text-center">
                                                 <div class="row">
                                                     <div class="col-sm-6">
@@ -55,13 +60,10 @@
                                                     <div class="col-sm-6">
                                                         <p class="font-weight-bold mt-4" style="font-size 160%">Pet Pics</p>
                                                         <img src="{{pet.pict}}" class="rounded-circle" width="100px">
+
                                                     </div>
                                                 </div>
                                                 {{/each}}
-                                                
-                                                
-                                                
-
                                                 </div>
                                             </div>
                                         </div>
@@ -74,8 +76,6 @@
                 </div>
             </div>
         </div>
- 
-
     
 
 

@@ -19,7 +19,7 @@ subButton.addEventListener('click', async (event)=>{
     if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to log in');
+        alert('Your login has failed, try a different password');
       }
 
     
