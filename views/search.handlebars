@@ -1,30 +1,10 @@
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-{{!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> --}}
-    <!-- #################################### Start NavBar Section ############################## -->
 
-    {{!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><img class="resize" src="/public/img/logo.png">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-main">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a href="#">About Woofer</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav> --}}
 
     <!-- #################################### End NavBar Section ############################## -->
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
 
 
     <!-- #################################### Start Search Section ############################## -->
@@ -53,12 +33,12 @@
                                     <div class="col-md-10 mt-5 pt-5">
                                         <div class="row z-depth-3">
                                             <div class="col-sm-4 bg-info rounded-left">
-                                                <div class="card-block text-center text-white" style="padding-bottom: 15px;">
-                                                    <i class="fa fa-user-tie fa-7x mt-5"></i>
-                                                    <img src="{{user.pict}}" alt="userPic">
+                                                <div class="card-block text-center text-white">
+                                                
+                                                    <img src="{{user.pict}}"class="rounded-circle" alt="userPic">
                                                     <h2 class="font-weight-bold mt-4">{{user.name}}</h2>
                                                     <a href="#" class="badge badge-info prof_button" u_id="{{user.id}}">Profile</a>
-                                                    {{!-- <p>{{user.zip}}</p> --}}
+                                                    
                                                 </div>
                                             </div>
                                             <div class="col-sm-8 bg-white rounded-right" style="margin-left: 15px; display: flex;">
@@ -67,11 +47,20 @@
                                                 {{!-- <h4 class="mt-3">Pets</h4> --}}
                                                 
                                                 {{#each pets as |pet|}}
-                                                <div style="margin-left: 10px;">
-                                                    <div >
-                                                        {{!-- <p class="font-weight-bold">{{#each }}</p> --}}
-                                                        <h4 >{{pet.name}}</h4>
-                                                        <img src="{{pet.pict}}" width="200px">
+
+                                                <hr class="bg-primary text-center">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <p class="font-weight-bold mt-4" style="font-size:160%">Pet Info</p>
+                                                        <h5 class="text-muted">Name: {{pet.name}}</h6>
+                                                        <h5 class="text-muted">Age: {{pet.age}}</h6>
+                                                        <h5 class="text-muted">Species: {{pet.type}}</h6>
+                                                        <h5 class="text-muted">Personality: {{pet.personality}}</h6>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <p class="font-weight-bold mt-4" style="font-size 160%">Pet Pics</p>
+                                                        <img src="{{pet.pict}}" class="rounded-circle" width="100px">
+
                                                     </div>
                                                 </div>
                                                 {{/each}}
@@ -87,33 +76,6 @@
                 </div>
             </div>
         </div>
-    <!-- #################################### Start Footer Section ############################## -->
-    {{!-- <footer class="container-fluid text-center">
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>Contact Us</h3>
-                <br>
-                <h4>Pretend Office address would go here</h4>
-            </div>
-            <div class="col-sm-4">
-                <h3>Connect</h3>
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-google"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-youtube"></a>
-
-            </div>
-
-            <div class="col-sm-4">
-                <img src="/public/img/logo.png" class="icon" alt="Woofer Logo">
-
-            </div>
-        </div>
-    </footer> --}}
-
-    <!-- #################################### End Footer Section ############################## -->
-
     
 
 

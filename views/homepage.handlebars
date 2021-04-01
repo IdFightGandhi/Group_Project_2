@@ -2,14 +2,14 @@
   <div class="landing-text">
     <h1>WELCOME TO WOOFER!</h1>
     <h3>A place for pets and their owners to meet</h3>
-    <a href="#" class="btn btn-default btn-lg" id="signupButton">Sign Up</a>
+    <a href="/signup" class="btn btn-default btn-lg">Sign Up</a>
     <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#exampleModal">Login</button>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="loginButton">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -17,14 +17,14 @@
                 <form>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
-                  <button type="submit" class="btn btn-primary" id="loginSubmitButton">Submit</button>
+                  <button type="submit" style="" class="btn btn-primary">Submit</button>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Forgot Password</button>
                   </div>
@@ -33,6 +33,9 @@
         </div>
       </div>
     </div>
+
+    
+    
   </div>
 </div>
 
@@ -44,7 +47,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-      <img class ="about-img" src="/img/dog-bone-silhouette-1.png" alt="About Area Image">
+      <img class ="about-img" src="img/dog-bone-silhouette-1.png" alt="About Area Image">
     </div>
     <div class="col-sm-6 text-center">
       <h2>What is Woofer?</h2>
@@ -98,7 +101,9 @@
 </div>
 </div>
 <!-- #################################### End What Section ############################## -->
+<div id="fixed">
 
+</div>
 <!-- #################################### Start Signup Section ############################## -->
 <div class="padding">
   <div class="container">
@@ -121,5 +126,8 @@
   
   </div>
   </div>
+
+
+<!-- #################################### End Signup Section ############################## -->
 
 <script src='/js/loginModal.js'></script>
